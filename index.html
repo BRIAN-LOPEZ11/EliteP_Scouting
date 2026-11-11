@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elite Predicts | Football Intelligence</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- CABECERA -->
+    <header class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">E</div>
+            <div>
+                <h2>ELITE <span>PREDICTS</span></h2>
+                <small>FOOTBALL INTELLIGENCE</small>
+            </div>
+        </div>
+
+        <nav class="sidebar-section">
+            <span class="nav-item">Análisis de jugadores</span>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">ELITE PREDICTS / ANÁLISIS</p>
+                <h1>Evaluación de jugadores</h1>
+            </div>
+
+            <div class="topbar-right">
+                <span class="model-tag">RANDOM FOREST</span>
+                <div class="avatar">EP</div>
+            </div>
+        </header>
+
+        <!-- BIENVENIDA -->
+        <section class="welcome-section">
+            <p class="eyebrow">INTELIGENCIA DEPORTIVA</p>
+            <h2>Descubre el próximo talento.</h2>
+            <p>
+                Analiza el perfil de un futbolista y estima su probabilidad
+                de pertenecer a la categoría Élite mediante nuestro modelo
+                de Machine Learning.
+            </p>
+        </section>
+
+        <!-- PANEL PRINCIPAL -->
+        <div class="dashboard-grid">
+
+            <!-- FORMULARIO -->
+            <section class="panel form-panel">
+
+                <div class="panel-heading">
+                    <span class="panel-number">01 / PERFIL</span>
+                    <h3>Datos del jugador</h3>
+                </div>
+
+                <div class="form-content">
+
+                    <!-- NOMBRE DEL JUGADOR -->
+                    <div class="form-group">
+                        <label for="nombreJugador">Nombre del jugador</label>
+                        <input
+                            type="text"
+                            id="nombreJugador"
+                            placeholder="Ej. Lionel Messi"
+                        >
+                    </div>
+
+                    <!-- POSICIÓN -->
+                    <div class="form-group">
+                        <label for="posicion">Posición principal</label>
+                        <select id="posicion">
+                            <option>Cargando...</option>
+                        </select>
+                    </div>
+
+                    <!-- EDAD -->
+                    <div class="form-group">
+                        <label for="edad">Edad (años)</label>
+                        <input
+                            id="edad"
+                            type="number"
+                            min="18"
+                            max="45"
+                            value="23"
+                        >
+                        <small class="field-hint">
+                            Edad permitida: entre 18 y 45 años.
+                        </small>
+                    </div>
+
+                    <!-- ESTATURA -->
+                    <div class="form-group">
+                        <label for="estatura">Estatura (cm)</label>
+                        <input
+                            id="estatura"
+                            type="number"
+                            min="150"
+                            max="210"
+                            step="any"
+                            placeholder="Ej. 180"
+                        >
+                        <small class="field-hint">
+                            Campo opcional. Si lo dejas vacío, se utilizará
+                            la estatura mediana de la posición.
+                        </small>
+                    </div>
+
+                    <!-- BOTÓN -->
+                    <button id="btn" type="button">
+                        <span>Analizar jugador</span>
+                        <span>→</span>
+                    </button>
+
+                    <div id="error" class="error-state"></div>
+
+                </div>
+            </section>
+
+            <!-- RESULTADOS -->
+            <section class="panel result-panel">
+
+                <div class="panel-heading">
+                    <span class="panel-number">02 / RESULTADO</span>
+                    <h3>Informe de scouting</h3>
+                </div>
+
+                <div class="result-content">
+
+                    <div id="resultado">
+
+                        <span class="result-label">
+                            CLASIFICACIÓN DEL JUGADOR
+                        </span>
+
+                        <div class="etiqueta" id="etiqueta"></div>
+
+                        <div class="probability-header">
+                            <span>Probabilidad de Élite</span>
+                            <strong id="probabilityPlaceholder"></strong>
+                        </div>
+
+                        <div class="barra">
+                            <div id="progreso"></div>
+                        </div>
+
+                        <div class="detalle" id="detalle"></div>
+
+                        <div class="result-description">
+                            <h4>Interpretación del análisis</h4>
+                            <p>
+                                El resultado representa la probabilidad
+                                estimada por el modelo de que el jugador
+                                pertenezca al grupo Élite, definido como
+                                el 25% superior del valor de mercado.
+                            </p>
+                        </div>
+
+                        <div class="result-footer">
+                            <span>MODELO RANDOM FOREST</span>
+                            <span>ELITE PREDICTS AI</span>
+                        </div>
+
+                    </div>
+
+                    <!-- ESTADO INICIAL -->
+                    <div id="emptyState" class="empty-state">
+                        <div class="empty-icon">◎</div>
+                        <h3>Esperando análisis</h3>
+                        <p>
+                            Completa los datos del futbolista y ejecuta
+                            el análisis para conocer su clasificación
+                            y probabilidad de ser Élite.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-top">
+                <span>ELITE PREDICTS © 2026</span>
+                <span>Proyecto académico de minería de datos</span>
+            </div>
+
+            <p class="footer-disclaimer">
+                Proyecto con fines exclusivamente académicos y sin ánimo
+                de lucro. No está afiliado, patrocinado ni respaldado
+                por Transfermarkt. Los datos provienen de un conjunto
+                de datos público basado en Transfermarkt; el diseño es
+                únicamente una referencia visual.
+            </p>
+        </footer>
+
+    </main>
+</div>
+
+<script src="/app.js"></script>
+
+</body>
+</html>
